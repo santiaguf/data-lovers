@@ -1,7 +1,7 @@
 # Data Lovers
 
 ## Índice
-
+* [0. Trabajo previo](#0-trabajo-previo)
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
@@ -13,6 +13,51 @@
 * [9. Checklist](#9-checklist)
 
 ***
+
+## 0. Trabajo previo
+
+**Proceso de diseño:** luego de decidir trabajar con los datos de pokemon, se decide desarrollar una app que muestre los pokemones, al ser esta data estática y no requerir peticiones a internet, será muy rápida y útil para las personas que la usen.
+
+- *¿Quiénes son los principales usuarios de producto?* personas entre 14 y 70 años, amantes a pokemon.
+- *¿Cuáles son los objetivos de estos usuarios en relación con el producto?* ver todos los pokemones, filtrarlos por tipo, ordenarlos por nombre, entre otros.
+- *¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?* ver los pokemones de un tipo, saber cuáles son los más fuertes, por curiosidad o por tener esta información para complementarla al momento de jugar pokemon Go o cualquier juego de pokemon en las diferentes plataformas.
+- *¿Cuándo utilizan o utilizarían el producto?* en cualquier momento que deseen desde sus dispositivos móviles.
+- *Problema a resolver:* muchas personas gustan de pokemon pero al descargar apps o consultar sitios web, requieren estar constamente navegando y esto consume datos y/o tiempo entre carga y carga del sitio, es por esto que PokeLovers nace como una app que carga la información de manera rápida e intuitiva.
+
+**Historias de usuario:**
+
+**HU1: listar todos los pokemones** yo como usuario quiero poder ver todos los pokemones para poder conocerlos.
+
+- criterios de aceptación: El usuario podrá visualizar los pokemones con su imagen, nombre, número y tipo.
+-  Definición de terminado: Eslint sin errores, testear funciones.
+
+**HU2: ordenar los pokemones** yo como usuario quiero poder ordenar los pokemones en orden alfabética ascendente y descendente para poder saber cuales tiene nombre que empiecen por cierta letra.
+
+- criterios de aceptación: El usuario podrá visualizar los pokemones con su imagen, nombre, número y tipo ordenados por nombre de forma ascendente o descendente.
+-  Definición de terminado: Eslint sin errores, testear funciones.
+
+**HU3: filtrar todos los pokemones** yo como usuario quiero poder filtrar todos los pokemones por tipo para saber cuáles y cuantos hay por tipo (agua, tierra, etc).
+
+- criterios de aceptación: El usuario podrá visualizar los pokemones con su imagen, nombre, número y tipo de acuerdo a un filtro por tipo.
+-  Definición de terminado: Eslint sin errores, testear funciones.
+
+**HU4: ver los más poderosos pokemones** yo como usuario quiero poder ver los 10 pokemones más fuertes para poder conocerlos.
+
+- criterios de aceptación: El usuario podrá visualizar los 10 pokemones más fuertes con su imagen, nombre, número y tipo.
+-  Definición de terminado: Eslint sin errores, testear funciones.
+
+**Prototipos**
+
+- *prototipo de baja fidelidad*
+
+<img src="src/img/low.jpg" width="350">
+
+- *prototipo de alta fidelidad*
+
+<img src="src/img/frame1.png" width="350">
+<img src="src/img/frame2.png" width="350">
+
+[Prototipo en Figma](https://www.figma.com/file/D8B5EespTPdjZpx6hTItfk/DataLovers?node-id=0%3A1)
 
 ## 1. Preámbulo
 
