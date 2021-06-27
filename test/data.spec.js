@@ -1,4 +1,4 @@
-import { example, anotherExample } from '../src/data.js';
+import { example, showData } from '../src/data.js';
 
 
 describe('example', () => {
@@ -11,13 +11,12 @@ describe('example', () => {
   });
 });
 
-
-describe('anotherExample', () => {
+describe('showData', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof showData).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns an object', () => {
+    expect(showData(Object)).toBe(Object);
   });
 });
