@@ -38,6 +38,12 @@ const createCard = (element) => {
   numberContainer.classList.add('number-container');
   infoContainer.appendChild(numberContainer);
 
+  const num = document.createElement('p');
+  num.id = `name-${element.num}`;
+  num.classList.add('number-container');
+  num.textContent = element.num;
+  numberContainer.appendChild(num);
+
   const nameContainer = document.createElement('div');
   nameContainer.id = `name-container-${element.num}`;
   nameContainer.classList.add('name-container');
