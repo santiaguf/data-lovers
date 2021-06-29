@@ -33,6 +33,22 @@ const createCard = (element) => {
   infoContainer.classList.add('info-container');
   card.appendChild(infoContainer);
 
+  const numberContainer = document.createElement('div');
+  numberContainer.id = `number-container-${element.num}`;
+  numberContainer.classList.add('number-container');
+  infoContainer.appendChild(numberContainer);
+
+  const nameContainer = document.createElement('div');
+  nameContainer.id = `name-container-${element.num}`;
+  nameContainer.classList.add('name-container');
+  infoContainer.appendChild(nameContainer);
+
+  const name = document.createElement('p');
+  name.id = `name-${element.num}`;
+  name.classList.add('name');
+  name.textContent = element.name;
+  nameContainer.appendChild(name);
+
   //console.log(element);
 };
 
