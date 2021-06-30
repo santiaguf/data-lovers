@@ -1,4 +1,4 @@
-import { showData, sortData, filterData } from './data.js';
+import { showData, filterData } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const createLayout = () => {
@@ -16,7 +16,33 @@ const createLayout = () => {
   const showAllButton = document.createElement('button');
   showAllButton.id = 'show-all-btn';
   showAllButton.textContent = 'Mostrar todos';
-  header.appendChild(showAllButton);
+  menuContainer.appendChild(showAllButton);
+
+  const values = ["grass", "poison", "fire", "flying", "water", "bug",  "normal",  "electric",  "ground",  "fighting", "psychic",  "rock",  "ice",  "ghost",  "dragon",  "fairy",  "dark", "steel"];
+
+  const select = document.createElement("select");
+  select.name = "pokemon-type";
+  select.id = "pokemon-type"
+
+  for (const val of values)
+  {
+      const option = document.createElement("option");
+      option.value = val;
+      option.text = val.charAt(0).toUpperCase() + val.slice(1);
+      select.appendChild(option);
+  }
+
+  const label = document.createElement("label");
+  label.innerHTML = "filtrar por tipo: "
+  label.htmlFor = "pokemon-type";
+
+  document.getElementById("menu-container").appendChild(label).appendChild(select);
+
+  const filterButton = document.createElement('button');
+  filterButton.id = 'filter-btn';
+  filterButton.textContent = 'Filtrar';
+  menuContainer.appendChild(filterButton);
+
 
   const container = document.createElement('div');
   container.id = 'container';
@@ -77,15 +103,14 @@ const createCard = (element) => {
 };
 
 const removeItems = () => {
-  const container = document.createElement('div');
+  const container = document.getElementById('container');
   container.textContent = '';
 }
 
 const printData = (data) => {
 
-  const pokemonArray = data['pokemon']
   removeItems();
-  pokemonArray.forEach(element => createCard(element));
+  data.forEach(element => createCard(element));
   //console.log(pokemonArray);
 };
 
@@ -94,10 +119,10 @@ const showPokemons = (data) => {
   printData(allPokemons);
 };
 
-const sortPokemons = (data, sortBy, order) => {
-  const allPokemons = sortData(data, sortBy, order);
-  printData(allPokemons);
-};
+// const sortPokemons = (data, sortBy, order) => {
+//   const allPokemons = sortData(data, sortBy, order);
+//   printData(allPokemons);
+// };
 
 const filterPokemons = (data, condition) => {
     const allPokemons = filterData(data, condition)
@@ -110,4 +135,11 @@ showPokemons(data);
 const showAllBtn = document.getElementById('show-all-btn');
 showAllBtn.addEventListener('click', () => {
   showPokemons(data);
+});
+
+const filterBtn = document.getElementById('filter-btn');
+filterBtn.addEventListener('click', () => {
+  const pokemonTypeList = document.getElementById('pokemon-type');
+  const typeSelected = pokemonTypeList.options[pokemonTypeList.selectedIndex].value;
+  filterPokemons(data, typeSelected);
 });

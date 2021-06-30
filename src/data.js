@@ -5,7 +5,8 @@ export const example = () => {
 };
 
 export const showData = (data) => {
-  return data;
+  const pokemonArray = data['pokemon'];
+  return pokemonArray;
 };
 
 export const sortData = (data, sortBy, sortOrder) => {
@@ -14,6 +15,8 @@ export const sortData = (data, sortBy, sortOrder) => {
 };
 
 export const filterData = (data, condition) => {
-  console.log(`${condition}`);
-  return data;
+  const pokemonArray = data['pokemon'];
+  const result = pokemonArray.filter(pokemon => pokemon.type.includes(condition));
+  console.log(result);
+  return result;
 };
