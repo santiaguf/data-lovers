@@ -4,9 +4,19 @@ import data from './data/pokemon/pokemon.js';
 const createLayout = () => {
 
   const root = document.getElementById('root');
+
   const header = document.createElement('header');
   header.id = 'header';
   root.appendChild(header);
+
+  const menuContainer = document.createElement('div');
+  menuContainer.id = 'menu-container';
+  header.appendChild(menuContainer);
+
+  const showAllButton = document.createElement('button');
+  showAllButton.id = 'show-all-btn';
+  showAllButton.textContent = 'Mostrar todos';
+  header.appendChild(showAllButton);
 
   const container = document.createElement('div');
   container.id = 'container';
@@ -97,3 +107,7 @@ const filterPokemons = (data, condition) => {
 createLayout();
 showPokemons(data);
 
+const showAllBtn = document.getElementById('show-all-btn');
+showAllBtn.addEventListener('click', () => {
+  showPokemons(data);
+});
