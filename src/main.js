@@ -1,13 +1,21 @@
-import { example, showData } from './data.js';
+import { showData, sortData, filterData } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-console.log(example);
-
 const createLayout = () => {
+
   const root = document.getElementById('root');
+  const header = document.createElement('header');
+  header.id = 'header';
+  root.appendChild(header);
+
   const container = document.createElement('div');
   container.id = 'container';
   root.appendChild(container);
+
+  const footer = document.createElement('footer');
+  footer.id = 'footer';
+  root.appendChild(footer);
+
 }
 
 const createCard = (element) => {
@@ -76,5 +84,16 @@ const showPokemons = (data) => {
   printData(allPokemons);
 };
 
+const sortPokemons = (data, sortBy, order) => {
+  const allPokemons = sortData(data, sortBy, order);
+  printData(allPokemons);
+};
+
+const filterPokemons = (data, condition) => {
+    const allPokemons = filterData(data, condition)
+    printData(allPokemons);
+};
+
 createLayout();
 showPokemons(data);
+
