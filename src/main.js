@@ -9,6 +9,16 @@ const createLayout = () => {
   header.id = 'header';
   root.appendChild(header);
 
+  const logoContainer = document.createElement('div');
+  logoContainer.id = 'logo-conainer';
+  header.appendChild(logoContainer);
+
+  const logo = document.createElement('img');
+  logo.id = 'logo';
+  logo.src = 'img/logo.png';
+  logo.classList.add('img');
+  logoContainer.appendChild(logo);
+
   const menuContainer = document.createElement('div');
   menuContainer.id = 'menu-container';
   header.appendChild(menuContainer);
