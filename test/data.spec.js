@@ -59,6 +59,14 @@ describe('showData', () => {
   it('returns an object', () => {
     expect(showData(pokemonMock)).toBe(pokemonMock.pokemon);
   });
+
+  it('should throw TypeError when invoked with wrong argument', () => {
+    expect(() => showData()).toThrow(TypeError);
+    expect(() => showData(0)).toThrow(TypeError);
+    expect(() => showData(null)).toThrow(TypeError);
+    expect(() => showData([])).toThrow(TypeError);
+  });
+
 });
 
 describe('filterData', () => {
@@ -70,6 +78,19 @@ describe('filterData', () => {
     const result = filterData(pokemonMock, 'Water');
     expect(result[0].name).toEqual('Squirtle');
   });
+
+
+  it('should throw TypeError when invoked with wrong argument', () => {
+    expect(() => filterData()).toThrow(TypeError);
+    expect(() => filterData(0)).toThrow(TypeError);
+    expect(() => filterData(null)).toThrow(TypeError);
+    expect(() => filterData([])).toThrow(TypeError);
+    expect(() => filterData(pokemonMock)).toThrow(TypeError);
+    expect(() => filterData(pokemonMock, 0)).toThrow(TypeError);
+    expect(() => filterData(pokemonMock, null)).toThrow(TypeError);
+    expect(() => filterData(pokemonMock, undefined)).toThrow(TypeError);
+  });
+
 });
 
 
