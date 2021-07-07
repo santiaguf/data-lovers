@@ -1,15 +1,55 @@
-import { example, showData, sortData, filterData } from '../src/data.js';
+import { showData, sortData, filterData } from '../src/data.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+const pokemonMock = {
+  pokemon: [{
+    "name": "Bulbasaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "size":{
+      "height": "0.71 m",
+    },
+    "spawn_chance": 0.69,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ]
+  },
+  {
+    "name": "Ivysaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "size":{
+      "height": "0.99 m",
+    },
+    "spawn_chance": 0.042,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ]
+  },
+  {
+    "name": "Squirtle",
+    "type": [
+      "Water"
+    ],
+    "size":{
+      "height": "0.51 m",
+    },
+    "spawn_chance": 0.58,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+  }]
+};
 
 describe('showData', () => {
   it('is a function', () => {
@@ -17,7 +57,7 @@ describe('showData', () => {
   });
 
   it('returns an object', () => {
-    expect(showData(Object)).toBe(Object);
+    expect(showData(pokemonMock)).toBe(pokemonMock.pokemon);
   });
 });
 
@@ -26,8 +66,9 @@ describe('filterData', () => {
     expect(typeof filterData).toBe('function');
   });
 
-  it('returns an object', () => {
-    expect(filterData(Object, String)).toBe(Object);
+  it('return Squirtle from pokemonMock when type is "Water" ', () => {
+    const result = filterData(pokemonMock, 'Water');
+    expect(result[0].name).toEqual('Squirtle');
   });
 });
 
