@@ -59,11 +59,6 @@ const createLayout = () => {
   searchbox.placeholder = 'buscar pokemon';
   menuContainer.appendChild(searchbox);
 
-  const searchButton = document.createElement('button');
-  searchButton.id = 'search-btn';
-  searchButton.textContent = 'Buscar';
-  menuContainer.appendChild(searchButton);
-
   const container = document.createElement('div');
   container.id = 'container';
   root.appendChild(container);
@@ -164,8 +159,11 @@ filterBtn.addEventListener('click', () => {
   filterPokemons(data, 'type', typeSelected);
 });
 
-const searchBtn = document.getElementById('search-btn');
-searchBtn.addEventListener('click', () => {
+const searchBtn = document.getElementById('search-box');
+searchBtn.addEventListener('keypress', () => {
   let searchTerm = document.getElementById('search-box').value;
-  filterPokemons(data, 'name', searchTerm);
+
+  if(searchTerm.length > 1){
+    filterPokemons(data, 'name', searchTerm);
+  }
 });

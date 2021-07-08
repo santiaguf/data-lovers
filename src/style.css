@@ -9,6 +9,12 @@ body {
   flex-wrap: wrap;
 }
 
+#menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .card {
   margin: 1em;
   background: linear-gradient(0deg, #e856ff, #e856ff);
