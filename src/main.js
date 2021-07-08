@@ -43,7 +43,7 @@ const createLayout = () => {
   }
 
   const label = document.createElement("label");
-  label.innerHTML = "filtrar por tipo: "
+  label.innerHTML = "filtrar por tipo: ";
   label.htmlFor = "pokemon-type";
 
   document.getElementById("menu-container").appendChild(label).appendChild(select);
@@ -53,11 +53,25 @@ const createLayout = () => {
   filterButton.textContent = 'Filtrar';
   menuContainer.appendChild(filterButton);
 
-
   const searchbox = document.createElement('input');
   searchbox.id = 'search-box';
   searchbox.placeholder = 'buscar pokemon';
   menuContainer.appendChild(searchbox);
+
+  const orderText = document.createElement('span');
+  orderText.id = 'order-text';
+  orderText.textContent = 'Ordenar por nombre';
+  menuContainer.appendChild(orderText);
+
+  const orderAscButton = document.createElement('button');
+  orderAscButton.id = 'order-asc-btn';
+  orderAscButton.textContent = 'A-Z';
+  menuContainer.appendChild(orderAscButton);
+
+  const orderDescButton = document.createElement('button');
+  orderDescButton.id = 'order-desc-btn';
+  orderDescButton.textContent = 'Z-A';
+  menuContainer.appendChild(orderDescButton);
 
   const container = document.createElement('div');
   container.id = 'container';
@@ -166,4 +180,9 @@ searchBtn.addEventListener('keypress', () => {
   if(searchTerm.length > 1){
     filterPokemons(data, 'name', searchTerm);
   }
+});
+
+const orderAscBtn = document.getElementById('order-asc-btn');
+orderAscBtn.addEventListener('click', () => {
+
 });
