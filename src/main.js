@@ -134,8 +134,8 @@ const showPokemons = (data) => {
 //   printData(allPokemons);
 // };
 
-const filterPokemons = (data, condition) => {
-    const allPokemons = filterData(data, condition)
+const filterPokemons = (data, filterBy, condition) => {
+    const allPokemons = filterData(data, filterBy, condition)
     printData(allPokemons);
 };
 
@@ -151,5 +151,5 @@ const filterBtn = document.getElementById('filter-btn');
 filterBtn.addEventListener('click', () => {
   const pokemonTypeList = document.getElementById('pokemon-type');
   const typeSelected = pokemonTypeList.options[pokemonTypeList.selectedIndex].value;
-  filterPokemons(data, typeSelected);
+  filterPokemons(data, 'type', typeSelected);
 });
