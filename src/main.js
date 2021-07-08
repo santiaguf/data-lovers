@@ -1,4 +1,4 @@
-import { showData, filterData } from './data.js';
+import { showData, filterData, sortData } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const createLayout = () => {
@@ -148,10 +148,10 @@ const showPokemons = (data) => {
   printData(allPokemons);
 };
 
-// const sortPokemons = (data, sortBy, order) => {
-//   const allPokemons = sortData(data, sortBy, order);
-//   printData(allPokemons);
-// };
+const sortPokemons = (data, sortBy, order) => {
+  const allPokemons = sortData(data, sortBy, order);
+  printData(allPokemons);
+};
 
 const filterPokemons = (data, filterBy, condition) => {
     const allPokemons = filterData(data, filterBy, condition);
@@ -184,5 +184,10 @@ searchBtn.addEventListener('keypress', () => {
 
 const orderAscBtn = document.getElementById('order-asc-btn');
 orderAscBtn.addEventListener('click', () => {
+  sortPokemons(data, 'name', 'ASC');
+});
 
+const orderdescBtn = document.getElementById('order-desc-btn');
+orderdescBtn.addEventListener('click', () => {
+  sortPokemons(data, 'name', 'DESC');
 });

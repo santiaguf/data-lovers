@@ -8,7 +8,7 @@ export const showData = (data) => {
 };
 
 export const sortData = (data, sortBy, sortOrder) => {
-  if (data === undefined || typeof data !== 'object' || data === 0 || data === null || data.length === 0 || sortBy === undefined || typeof filterBy !== 'string' || sortBy === 0 || sortBy === null || sortBy.length === 0 || sortOrder === undefined || typeof sortOrder !== 'string' || sortOrder === 0 || sortOrder === null || sortOrder.length === 0) {
+  if (data === undefined || typeof data !== 'object' || data === 0 || data === null || data.length === 0 || sortBy === undefined || typeof sortBy !== 'string' || sortBy === 0 || sortBy === null || sortBy.length === 0 || sortOrder === undefined || typeof sortOrder !== 'string' || sortOrder === 0 || sortOrder === null || sortOrder.length === 0) {
     throw new TypeError('data is not an object');
   }
   const pokemonArray = data['pokemon'];

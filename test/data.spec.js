@@ -79,6 +79,11 @@ describe('filterData', () => {
     expect(result[0].name).toEqual('Squirtle');
   });
 
+  it('return Ivysaur from pokemonMock when name contains "Ivy" ', () => {
+    const result = filterData(pokemonMock, 'name', 'Ivy');
+    expect(result[0].name).toEqual('Ivysaur');
+  });
+
 
   it('should throw TypeError when invoked with wrong arguments', () => {
     expect(() => filterData()).toThrow(TypeError);
@@ -106,6 +111,11 @@ describe('sortData', () => {
   it('return Squirtle as first element from pokemonMock when is sorted by name descending ', () => {
     const result = sortData(pokemonMock, 'name', 'DESC');
     expect(result[0].name).toEqual('Squirtle');
+  });
+
+  it('return Bulbasaur as first element from pokemonMock when is sorted by name ascending ', () => {
+    const result = sortData(pokemonMock, 'name', 'ASC');
+    expect(result[0].name).toEqual('Bulbasaur');
   });
 
   it('should throw TypeError when invoked with wrong arguments', () => {
