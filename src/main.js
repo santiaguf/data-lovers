@@ -54,6 +54,16 @@ const createLayout = () => {
   menuContainer.appendChild(filterButton);
 
 
+  const searchbox = document.createElement('input');
+  searchbox.id = 'search-box';
+  searchbox.placeholder = 'buscar pokemon';
+  menuContainer.appendChild(searchbox);
+
+  const searchButton = document.createElement('button');
+  searchButton.id = 'search-btn';
+  searchButton.textContent = 'Buscar';
+  menuContainer.appendChild(searchButton);
+
   const container = document.createElement('div');
   container.id = 'container';
   root.appendChild(container);
@@ -135,7 +145,7 @@ const showPokemons = (data) => {
 // };
 
 const filterPokemons = (data, filterBy, condition) => {
-    const allPokemons = filterData(data, filterBy, condition)
+    const allPokemons = filterData(data, filterBy, condition);
     printData(allPokemons);
 };
 
@@ -152,4 +162,10 @@ filterBtn.addEventListener('click', () => {
   const pokemonTypeList = document.getElementById('pokemon-type');
   const typeSelected = pokemonTypeList.options[pokemonTypeList.selectedIndex].value;
   filterPokemons(data, 'type', typeSelected);
+});
+
+const searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener('click', () => {
+  let searchTerm = document.getElementById('search-box').value;
+  filterPokemons(data, 'name', searchTerm);
 });
