@@ -35,5 +35,21 @@ export const filterData = (data, filterBy, condition) => {
 };
 
 export const computeStats = (data) => {
-  return data;
+  if (data === undefined || typeof data !== 'object' || data === 0 || data === null || data.length === 0) {
+    throw new TypeError('data is not an object');
+  }
+
+  const pokemonArray = data['pokemon'];
+  let pokemonTypes = [];
+  pokemonArray.forEach(element => {
+  element.type.forEach(el =>{
+    pokemonTypes.push(el);
+  });
+});
+
+let types = {};
+for (var i = 0; i < pokemonTypes.length; i++) {
+    types[pokemonTypes[i]] = 1 + (types[pokemonTypes[i]] || 0);
+}
+  return types;
 };

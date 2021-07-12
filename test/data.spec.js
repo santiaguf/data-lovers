@@ -1,4 +1,4 @@
-import { showData, sortData, filterData } from '../src/data.js';
+import { showData, sortData, filterData, computeStats } from '../src/data.js';
 
 const pokemonMock = {
   pokemon: [{
@@ -129,6 +129,25 @@ describe('sortData', () => {
     expect(() => sortData(pokemonMock, String, 0)).toThrow(TypeError);
     expect(() => sortData(pokemonMock, String, null)).toThrow(TypeError);
     expect(() => sortData(pokemonMock, String, undefined)).toThrow(TypeError);
+  });
+
+});
+
+describe('computeStats', () => {
+  it('is a function', () => {
+    expect(typeof computeStats).toBe('function');
+  });
+
+  it('return 1 from pokemonMock when type is "Water" ', () => {
+    const result = computeStats(pokemonMock);
+    expect(result['Water']).toEqual(1);
+  });
+
+  it('should throw TypeError when invoked with wrong argument', () => {
+    expect(() => computeStats()).toThrow(TypeError);
+    expect(() => computeStats(0)).toThrow(TypeError);
+    expect(() => computeStats(null)).toThrow(TypeError);
+    expect(() => computeStats([])).toThrow(TypeError);
   });
 
 });

@@ -73,6 +73,11 @@ const createLayout = () => {
   orderDescButton.textContent = 'Z-A';
   menuContainer.appendChild(orderDescButton);
 
+  const statsButton = document.createElement('button');
+  statsButton.id = 'stats-btn';
+  statsButton.textContent = 'Estadísticas';
+  menuContainer.appendChild(statsButton);
+
   const container = document.createElement('div');
   container.id = 'container';
   root.appendChild(container);
@@ -128,7 +133,6 @@ const createCard = (element) => {
   name.textContent = element.name;
   nameContainer.appendChild(name);
 
-  //console.log(element);
 };
 
 const removeItems = () => {
@@ -137,10 +141,8 @@ const removeItems = () => {
 }
 
 const printData = (data) => {
-
   removeItems();
   data.forEach(element => createCard(element));
-  //console.log(pokemonArray);
 };
 
 const showPokemons = (data) => {
@@ -156,6 +158,11 @@ const sortPokemons = (data, sortBy, order) => {
 const filterPokemons = (data, filterBy, condition) => {
     const allPokemons = filterData(data, filterBy, condition);
     printData(allPokemons);
+};
+
+const computePokemonStats = (data) => {
+  const stats = computeStats(data);
+  console.log(stats);
 };
 
 createLayout();
@@ -190,4 +197,9 @@ orderAscBtn.addEventListener('click', () => {
 const orderdescBtn = document.getElementById('order-desc-btn');
 orderdescBtn.addEventListener('click', () => {
   sortPokemons(data, 'name', 'DESC');
+});
+
+const statsBtn = document.getElementById('stats-btn');
+statsBtn.addEventListener('click', () => {
+  computePokemonStats(data);
 });
