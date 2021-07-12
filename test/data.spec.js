@@ -84,7 +84,6 @@ describe('filterData', () => {
     expect(result[0].name).toEqual('Ivysaur');
   });
 
-
   it('should throw TypeError when invoked with wrong arguments', () => {
     expect(() => filterData()).toThrow(TypeError);
     expect(() => filterData(0)).toThrow(TypeError);
@@ -101,7 +100,6 @@ describe('filterData', () => {
   });
 
 });
-
 
 describe('sortData', () => {
   it('is a function', () => {

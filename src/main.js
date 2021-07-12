@@ -1,4 +1,4 @@
-import { showData, filterData, sortData } from './data.js';
+import { showData, filterData, sortData, computeStats } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const createLayout = () => {

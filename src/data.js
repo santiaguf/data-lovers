@@ -33,3 +33,7 @@ export const filterData = (data, filterBy, condition) => {
 
   return result;
 };
+
+export const computeStats = (data) => {
+  return data;
+};
