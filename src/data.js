@@ -47,7 +47,7 @@ export const computeStats = (data) => {
   });
 });
 
-let types = {};
+let types = [];
 for (var i = 0; i < pokemonTypes.length; i++) {
     types[pokemonTypes[i]] = 1 + (types[pokemonTypes[i]] || 0);
 }

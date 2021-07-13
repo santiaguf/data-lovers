@@ -145,6 +145,23 @@ const printData = (data) => {
   data.forEach(element => createCard(element));
 };
 
+const printStats = (stats, data) => {
+  removeItems();
+
+  let totalPokemons = data.pokemon.length;
+  let newarray = [];
+  for (const [key, value] of Object.entries(stats)) {
+    let tempArray = {};
+
+    let percent = Math.trunc((value*100/totalPokemons));
+    tempArray['img']= 'img/logo.png';
+    tempArray['name'] = `${key}  ${percent} % of total`;
+    tempArray['num'] = `${value}`;
+    newarray.push(tempArray);
+  }
+  printData(newarray);
+}
+
 const showPokemons = (data) => {
   const allPokemons = showData(data);
   printData(allPokemons);
@@ -162,7 +179,7 @@ const filterPokemons = (data, filterBy, condition) => {
 
 const computePokemonStats = (data) => {
   const stats = computeStats(data);
-  console.log(stats);
+  printStats(stats, data);
 };
 
 createLayout();
