@@ -1,7 +1,25 @@
 import { showData, sortData, filterData, computeStats } from '../src/data.js';
 
 const pokemonMock = {
-  pokemon: [{
+  pokemon: [
+  {
+    "name": "Zubat",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "size":{
+      "height": "0.71 m",
+    },
+    "spawn_chance": 0.69,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ]
+  },
+  {
     "name": "Bulbasaur",
     "type": [
       "Grass",
@@ -48,7 +66,22 @@ const pokemonMock = {
       "Electric",
       "Grass"
     ],
-  }]
+  },
+  {
+    "name": "Pikachu",
+    "type": [
+      "Electric"
+    ],
+    "size":{
+      "height": "0.51 m",
+    },
+    "spawn_chance": 0.58,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+  },
+  ]
 };
 
 describe('showData', () => {
@@ -108,7 +141,7 @@ describe('sortData', () => {
 
   it('return Squirtle as first element from pokemonMock when is sorted by name descending ', () => {
     const result = sortData(pokemonMock, 'name', 'DESC');
-    expect(result[0].name).toEqual('Squirtle');
+    expect(result[0].name).toEqual('Zubat');
   });
 
   it('return Bulbasaur as first element from pokemonMock when is sorted by name ascending ', () => {
