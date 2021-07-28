@@ -55,7 +55,7 @@ const createLayout = () => {
 
   const searchbox = document.createElement('input');
   searchbox.id = 'search-box';
-  searchbox.placeholder = 'buscar pokemon';
+  searchbox.placeholder = '🔍 buscar pokemon';
   menuContainer.appendChild(searchbox);
 
   const orderText = document.createElement('span');
