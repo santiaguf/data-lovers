@@ -16,6 +16,9 @@ const createLayout = () => {
   const logo = document.createElement('img');
   logo.id = 'logo';
   logo.src = 'img/logo.png';
+  logo.alt = 'pokemon logo';
+  logo.setAttribute('width', '181px');
+  logo.setAttribute('height', '66px');
   logo.classList.add('img');
   logoContainer.appendChild(logo);
 
@@ -103,6 +106,7 @@ const createCard = (element) => {
   const img = document.createElement('img');
   img.setAttribute('id', `img-${element.num}`);
   img.setAttribute('src', `${element.img}`);
+  img.setAttribute('alt', `${element.name}`);
   img.setAttribute('class', 'img');
   imgContainer.appendChild(img);
 
