@@ -22,5 +22,8 @@
     "jest": "^27.5.1",
     "opener": "^1.5.2",
     "serve": "^13.0.2"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.15.3"
   }
 }

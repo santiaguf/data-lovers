@@ -1,5 +1,5 @@
 import { showData, filterData, sortData, computeStats } from './data.js';
-import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.min.js';
 
 const createLayout = () => {
 
