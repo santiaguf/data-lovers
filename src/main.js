@@ -15,7 +15,7 @@ const createLayout = () => {
 
   const logo = document.createElement('img');
   logo.id = 'logo';
-  logo.src = 'img/logo.png';
+  logo.src = 'img/logo-small.png';
   logo.alt = 'pokemon logo';
   logo.setAttribute('width', '181px');
   logo.setAttribute('height', '66px');
