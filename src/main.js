@@ -207,7 +207,7 @@ const computePokemonStats = (data) => {
   printStats(stats, data);
 };
 
-createLayout();
+//createLayout();
 
 const showAllBtn = document.getElementById('show-all-btn');
 showAllBtn.addEventListener('click', () => {
