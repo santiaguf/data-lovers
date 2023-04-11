@@ -1,96 +1,6 @@
 import { showData, filterData, sortData, computeStats } from './data.js';
 import data from './data/pokemon/pokemon.min.js';
 
-const createLayout = () => {
-
-  const root = document.getElementById('root');
-
-  const header = document.createElement('header');
-  header.id = 'header';
-  root.appendChild(header);
-
-  const logoContainer = document.createElement('div');
-  logoContainer.id = 'logo-conainer';
-  header.appendChild(logoContainer);
-
-  const logo = document.createElement('img');
-  logo.id = 'logo';
-  logo.src = 'img/logo-small.png';
-  logo.alt = 'pokemon logo';
-  logo.setAttribute('width', '181px');
-  logo.setAttribute('height', '66px');
-  logo.classList.add('img');
-  logoContainer.appendChild(logo);
-
-  const menuContainer = document.createElement('div');
-  menuContainer.id = 'menu-container';
-  header.appendChild(menuContainer);
-
-  const showAllButton = document.createElement('button');
-  showAllButton.id = 'show-all-btn';
-  showAllButton.textContent = 'Mostrar todos';
-  menuContainer.appendChild(showAllButton);
-
-  const values = ["grass", "poison", "fire", "flying", "water", "bug",  "normal",  "electric",  "ground",  "fighting", "psychic",  "rock",  "ice",  "ghost",  "dragon",  "fairy",  "dark", "steel"];
-
-  const select = document.createElement("select");
-  select.name = "pokemon-type";
-  select.id = "pokemon-type"
-
-  for (const val of values)
-  {
-      const option = document.createElement("option");
-      option.value = val;
-      option.text = val.charAt(0).toUpperCase() + val.slice(1);
-      select.appendChild(option);
-  }
-
-  const label = document.createElement("label");
-  label.innerHTML = "filtrar por tipo: ";
-  label.htmlFor = "pokemon-type";
-
-  document.getElementById("menu-container").appendChild(label).appendChild(select);
-
-  const filterButton = document.createElement('button');
-  filterButton.id = 'filter-btn';
-  filterButton.textContent = 'Filtrar';
-  menuContainer.appendChild(filterButton);
-
-  const searchbox = document.createElement('input');
-  searchbox.id = 'search-box';
-  searchbox.placeholder = '🔍 buscar pokemon';
-  menuContainer.appendChild(searchbox);
-
-  const orderText = document.createElement('span');
-  orderText.id = 'order-text';
-  orderText.textContent = 'Ordenar por nombre';
-  menuContainer.appendChild(orderText);
-
-  const orderAscButton = document.createElement('button');
-  orderAscButton.id = 'order-asc-btn';
-  orderAscButton.textContent = 'A-Z';
-  menuContainer.appendChild(orderAscButton);
-
-  const orderDescButton = document.createElement('button');
-  orderDescButton.id = 'order-desc-btn';
-  orderDescButton.textContent = 'Z-A';
-  menuContainer.appendChild(orderDescButton);
-
-  const statsButton = document.createElement('button');
-  statsButton.id = 'stats-btn';
-  statsButton.textContent = 'Estadísticas';
-  menuContainer.appendChild(statsButton);
-
-  const container = document.createElement('div');
-  container.id = 'container';
-  root.appendChild(container);
-
-  const footer = document.createElement('footer');
-  footer.id = 'footer';
-  root.appendChild(footer);
-
-}
-
 const createCard = (element) => {
   const container = document.getElementById('container');
   const card = document.createElement('div');
@@ -206,8 +116,6 @@ const computePokemonStats = (data) => {
   const stats = computeStats(data);
   printStats(stats, data);
 };
-
-//createLayout();
 
 const showAllBtn = document.getElementById('show-all-btn');
 showAllBtn.addEventListener('click', () => {
